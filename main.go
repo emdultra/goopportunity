@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "goopportunity/router"
 
+func main() {
+	router.Initialize()
 }
