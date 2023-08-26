@@ -7,12 +7,11 @@ func Initialize() {
 	router := gin.Default()
 
 	// Defini rotas
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	InitializeRoutes(router)
 
 	// Inicia o servidor gin na porta 8080
-	router.Run(":8080")
+	err := router.Run(":8080")
+	if err != nil {
+		panic(err)
+	}
 }
